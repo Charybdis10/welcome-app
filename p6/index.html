@@ -1,0 +1,71 @@
+<head>
+<tile> 	App 6 by satyam		 </title>
+<style>
+	*
+	{font size : 50px;}
+	body {background color:blue;}
+</style>
+<script>
+	function show()
+	{
+		event.preventDefault();
+		   
+		let  ans=document.getElementById("ans");
+		let name=document.getElementById("name");
+		
+	
+		if(name.value==""){
+			alert("Name is empty");
+			ans.innerHTML="";
+			name.focus;
+			return;
+		}
+	
+		elseif(name.value.trim()=""){
+			alert("Name  cannot be spaces");
+			ans.innerHTML="";
+			name.focus;
+			return;
+		}
+		elseif(!name.value.match(/^[A-Za-z]+$/){
+			alert("Name cannot be other than letters");
+			ans.innerHTML="";
+			name.focus;
+			return;
+		}
+		let d =new Date();
+		let hr= d.getHours();
+		let msg="";
+		if (hr<12)
+			msg="Good morning";
+		else if (hr<16)
+			msg="Good Afternon";
+		else 
+			msg="good evening";
+		
+		let rep=msg+ " " + name.value;
+		ans.innerHTML = rep;
+	}
+</script>
+
+
+
+
+</head>
+
+<body>
+<center>
+	<h1> Welcome App </h1>
+	<form onsubmit="show()">
+	<input type="text" placeholder="Enter your name"  id="name"/>
+	<br><br>
+	<input type="submit" value="Welcome"/>
+	</form>
+	<h2 id="ans"> 	</h2>
+
+
+
+
+</center>
+</body>
+</html>
